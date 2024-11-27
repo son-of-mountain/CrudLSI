@@ -4,10 +4,11 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
   <persistence-unit name="gestionCommandesPU" transaction-type="RESOURCE_LOCAL">
+
     <properties>
       <!-- Configuration JDBC -->
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/jeecrud"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/jeecrud?useSSL=false&amp;serverTimezone=UTC"/>
       <property name="jakarta.persistence.jdbc.user" value="root"/>
       <property name="jakarta.persistence.jdbc.password" value=""/>
 
@@ -15,6 +16,11 @@
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.use_sql_comments" value="true"/>
+      <property name="hibernate.generate_statistics" value="true"/>
+
     </properties>
   </persistence-unit>
+
 </persistence>

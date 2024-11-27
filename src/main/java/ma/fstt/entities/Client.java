@@ -1,9 +1,8 @@
 package ma.fstt.entities;
 
 import jakarta.persistence.*;
-import jakarta.persistence.List;
 import lombok.Data;
-
+import java.util.List;
 
 @Entity
 @Table(name="client")
@@ -23,7 +22,7 @@ public class Client {
     private String adresse;
 
     @OneToMany(mappedBy="client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Liste<Commande> commandes;
+    private List<Commande> commandes;
 
 
 }
